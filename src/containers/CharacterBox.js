@@ -9,6 +9,7 @@ class CharacterBox extends React.Component{
     super(props);
     this.handleCharacterSelected = this.handleCharacterSelected.bind(this);
     this.filterByStudents = this.filterByStudents.bind(this);
+    this.filterByStaff = this.filterByStaff.bind(this);
     this.state = {
       characters: [],
       currectCharacter: null
@@ -36,6 +37,16 @@ class CharacterBox extends React.Component{
       };
     };
     this.setState({characters: students});
+  };
+
+  filterByStaff(){
+    const staff = [];
+    for (let character of this.state.characters){
+      if(character.hogwartsStaff){
+        staff.push(character)
+      };
+    };
+    this.setState({characters: staff});
   }
 
   render(){
@@ -47,6 +58,7 @@ class CharacterBox extends React.Component{
         <Character character={this.state.currectCharacter}>
         </Character>
         <button onClick={this.filterByStudents}>Filter By Students</button>
+        <button onClick={this.filterByStaff}>Filter By Staff</button>
       </React.Fragment>
 
     )
