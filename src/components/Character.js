@@ -10,11 +10,9 @@ const Character = (props) => {
         <br/>
         <h3>{props.character.name}</h3>
         <ul>
-          <li>
             <ol>{props.character.dateOfBirth}</ol>
             <ol>{props.character.gender}</ol>
             <ol>{props.character.alive}</ol>
-          </li>
         </ul>
     </article>
   )

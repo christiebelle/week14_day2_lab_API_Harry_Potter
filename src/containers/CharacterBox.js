@@ -7,6 +7,7 @@ import Character from '../components/Character';
 class CharacterBox extends React.Component{
   constructor(props){
     super(props);
+    this.handleCharacterSelected = this.handleCharacterSelected.bind(this);
     this.state = {
       characters: [],
       currectCharacter: null
