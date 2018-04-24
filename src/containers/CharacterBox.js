@@ -1,4 +1,5 @@
 import React from 'react';
+import CharacterList from '../components/CharacterList'
 
 class CharacterBox extends React.Component{
   constructor(props){
