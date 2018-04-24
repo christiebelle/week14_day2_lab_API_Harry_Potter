@@ -51,15 +51,15 @@ class CharacterBox extends React.Component{
 
   render(){
     return(
-      <React.Fragment>
+      <div className="main">
         <h3>Harry Potter's characters</h3>
         <CharacterList characters={this.state.characters} onCharacterSelected={this.handleCharacterSelected}>
         </CharacterList>
         <Character character={this.state.currectCharacter}>
         </Character>
-        <button onClick={this.filterByStudents}>Filter By Students</button>
-        <button onClick={this.filterByStaff}>Filter By Staff</button>
-      </React.Fragment>
+        <button className="button" onClick={this.filterByStudents}>Filter By Students</button>
+        <button className="button" onClick={this.filterByStaff}>Filter By Staff</button>
+      </div>
 
     )
   }

@@ -6,9 +6,9 @@ const Character = (props) => {
   const alive = props.character.alive ? "Alive" : "Dead";
 
   return(
-    <article>
+    <article className="text">
       <img
-        style={{width:"200px", margin: "20px"}}
+        style={{width:"150px", height: "200px", margin: "10px"}}
         src={props.character.image} alt={props.character.name}/>
         <br/>
         <h5>{props.character.name}</h5>
