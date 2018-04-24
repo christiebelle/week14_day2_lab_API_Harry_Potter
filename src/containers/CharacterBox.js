@@ -30,7 +30,7 @@ handleCharacterSelected(index){
   render(){
     return(
       <React.Fragment>
-        <h1>Harry Potter's characters</h1>
+        <h3>Harry Potter's characters</h3>
         <CharacterList characters={this.state.characters} onCharacterSelected={this.handleCharacterSelected}>
         </CharacterList>
         <Character character={this.state.currectCharacter}>

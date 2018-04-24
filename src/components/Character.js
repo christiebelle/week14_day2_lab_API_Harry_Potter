@@ -2,17 +2,20 @@ import React from 'react';
 
 const Character = (props) => {
   if(!props.character) return null;
+
+  const alive = props.character.alive ? "Alive" : "Dead";
+
   return(
     <article>
       <img
-        style={{width:"250px", margin: "25px"}}
+        style={{width:"200px", margin: "20px"}}
         src={props.character.image} alt={props.character.name}/>
         <br/>
-        <h3>{props.character.name}</h3>
+        <h5>{props.character.name}</h5>
         <ul>
             <ol>{props.character.dateOfBirth}</ol>
             <ol>{props.character.gender}</ol>
-            <ol>{props.character.alive}</ol>
+            <ol>{alive}</ol>
         </ul>
     </article>
   )
