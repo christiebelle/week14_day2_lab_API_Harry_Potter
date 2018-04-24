@@ -8,6 +8,7 @@ class CharacterBox extends React.Component{
   constructor(props){
     super(props);
     this.handleCharacterSelected = this.handleCharacterSelected.bind(this);
+    this.filterByStudents = this.filterByStudents.bind(this);
     this.state = {
       characters: [],
       currectCharacter: null
@@ -22,10 +23,20 @@ class CharacterBox extends React.Component{
   }
 
 
-handleCharacterSelected(index){
-  const selectedCharacter = this.state.characters[index];
-  this.setState({currectCharacter: selectedCharacter});
+  handleCharacterSelected(index){
+    const selectedCharacter = this.state.characters[index];
+    this.setState({currectCharacter: selectedCharacter});
 }
+
+  filterByStudents(){
+    const students = [];
+    for (let character of this.state.characters){
+      if(character.hogwartsStudent){
+        students.push(character)
+      };
+    };
+    this.setState({characters: students});
+  }
 
   render(){
     return(
@@ -35,7 +46,9 @@ handleCharacterSelected(index){
         </CharacterList>
         <Character character={this.state.currectCharacter}>
         </Character>
+        <button onClick={this.filterByStudents}>Filter By Students</button>
       </React.Fragment>
+
     )
   }
 
