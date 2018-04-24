@@ -1,5 +1,8 @@
 import React from 'react';
-import CharacterList from '../components/CharacterList'
+import CharacterList from '../components/CharacterList';
+import Character from '../components/Character';
+
+
 
 class CharacterBox extends React.Component{
   constructor(props){
@@ -10,10 +13,27 @@ class CharacterBox extends React.Component{
     }
   }
 
+
+  componentDidMount(){
+    fetch("http://hp-api.herokuapp.com/api/characters")
+    .then(response => response.json())
+    .then(json => this.setState({characters: json}));
+  }
+
+
+handleCharacterSelected(index){
+  const selectedCharacter = this.state.characters[index];
+  this.setState({currectCharacter: selectedCharacter});
+}
+
   render(){
     return(
       <React.Fragment>
-        <p>{console.log("characters")}</p>
+        <h1>Harry Potter's characters</h1>
+        <CharacterList characters={this.state.characters} onCharacterSelected={this.handleCharacterSelected}>
+        </CharacterList>
+        <Character character={this.state.currectCharacter}>
+        </Character>
       </React.Fragment>
     )
   }

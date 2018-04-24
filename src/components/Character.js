@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CharacterProfile = (props) => {
+const Character = (props) => {
   if(!props.character) return null;
   return(
     <article>
@@ -19,3 +19,5 @@ const CharacterProfile = (props) => {
     </article>
   )
 }
+
+export default Character;
